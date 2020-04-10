@@ -1,8 +1,7 @@
 /node_modules/
 /package-lock.json
 /package.json
-style.css.map
-reset.css.map
+*.css.map
 .DS_Store
 *.scss
 *.mov
