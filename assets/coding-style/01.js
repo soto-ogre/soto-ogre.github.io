@@ -49,24 +49,35 @@ $(window).on('load resize', function(){
 });
 
   /* SP menu */
-  function toggleNav() {
-    var body = document.body;
-    var hamburger = document.getElementById('nav_btn');
-    var blackBg = document.getElementById('nav_bg');
+  // function toggleNav() {
+  //   var body = document.body;
+  //   var hamburger = $('.nav_btn')[0];
+  //   var blackBg = $('.nav_bg')[0];
   
-    hamburger.addEventListener('click', function() {
-      $(body).toggleClass('nav_open');
-    });
-    blackBg.addEventListener('click', function() {
-      // body.classList.remove('nav_open'); //もう一度クリックで解除
-      $(body).removeClass('nav_open');
-    });
-  }
-  toggleNav();
+  //   hamburger.addEventListener('click', function() {
+  //     $(body).toggleClass('nav_open');
+  //   });
+  //   blackBg.addEventListener('click', function() {
+  //     // body.classList.remove('nav_open'); //もう一度クリックで解除
+  //     $(body).removeClass('nav_open');
+  //   });
+  // }
+  // toggleNav();
 
-$(function() {
+function toggleNav() {
+  var body = document.body;
+  var hamburger = $('.nav_btn')[0];
+  var blackBg = $('.nav_bg')[0];
+  $(hamburger).on('click', function() {
+    $(body).toggleClass('nav_open');
+  });
+  $(blackBg).on('click', function() {
+    // body.classList.remove('nav_open'); //もう一度クリックで解除
+    $(body).removeClass('nav_open');
+  });
+}
+toggleNav();
 
-});
 // $(function() {
 //     var nav = $('#nav');    
 //     nav.hide();
