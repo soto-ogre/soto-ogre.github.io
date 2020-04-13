@@ -9,21 +9,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href=".././assets/reset.css?28081308">
 <link rel="stylesheet" href=".././assets/coding-style/01.css">
+<script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
+<script src=".././assets/coding-style/01.js"></script>
 </head>
 <body class="coding_01">
   <script type = "module" src = "https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
   <div class="contents">
     <nav class="nav">
       <div class="nav__search">
-        
         <input type="text" placeholder="type to search">
       </div>
       <div class="nav__menu">
-        <ul>
-          <li>
-            <h1><a href="">LIFESTYLE</a></h1>
+        <h1 id="sitetitle"><a href="">LIFESTYLE</a></h1>
+        <ul id="nav">
+          <!-- <li>
             <ion-icon name="menu-outline"></ion-icon>
-          </li>
+          </li> -->
           <li>
             <a href="">Home</a>
           </li>
@@ -42,10 +46,18 @@
           <li>
             <a href="">Food</a>
           </li>
+          <li>
+            <div class="nav__menu--sns">
+              <a href="" class="sns"><ion-icon name="mail-outline"></ion-icon></a>
+              <a href="" class="sns"><ion-icon name="logo-twitter"></ion-icon></a>
+              <a href="" class="sns"><ion-icon name="logo-instagram"></ion-icon></a>
+              <a href="" class="sns"><ion-icon name="logo-facebook"></ion-icon></a>  
+            </div>
+          </li>
         </ul>
       </div>
     </nav>
-    <div id="nav" class="nav_black"></div>
+    <div id="nav_black_back" class="nav_black"></div>
     <header>
       <div class="header-contents">
         <div class="header-contents__left">
@@ -332,94 +344,7 @@
       </div>
     </footer>
   </div>
-<script
-src="https://code.jquery.com/jquery-3.4.1.min.js"
-integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-crossorigin="anonymous"></script>
+
 <script src="../assets/jquery-color.js"></script>
-<script>
-$(window).on('load resize', function(){
-  var winW = $(window).width();
-  var devW = 768;
-    var nav = $('#nav');    
-    nav.hide();
-  if (winW <= devW) {
-    //767px以下の時の処理
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
-            $("nav").addClass("header_small");
-            nav.fadeIn().addClass("nav_black");;
-            
-        } else {
-            nav.fadeOut();
-            $("nav").removeClass("header_small");
-        }
-    });
-
-  } else if ((winW <= 1024)) {
-
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
-            $("nav").addClass("header_medium");
-            nav.fadeIn().addClass("nav_black_medium");;
-            
-        } else {
-            nav.fadeOut();
-            $("nav").removeClass("header_medium");
-        }
-    });
-
-
-  }else {// 1024px以上の時の処理
-
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
-            $("nav").addClass("header_large");
-            nav.fadeIn().addClass("nav_black_large");;
-            
-        } else {
-            nav.fadeOut();
-            $("nav").removeClass("header_large");
-        }
-    });
-
-
-    
-  }
-});
-// $(function() {
-//     var nav = $('#nav');    
-//     nav.hide();
-//     //スクロールが100に達したらボタン表示
-//     $(window).scroll(function () {
-//         if ($(this).scrollTop() > 100) {
-//             $("nav").addClass("header_small");
-//             nav.fadeIn().addClass("nav_black");;
-            
-//         } else {
-//             nav.fadeOut();
-//             $("nav").removeClass("header_small");
-//         }
-//     });
-//     //スクロールしてトップ
-//     nav.click(function () {
-//         $('body,html').animate({
-//             scrollTop: 0
-//         }, 500);
-//         return false;
-//     });
-// });
-
-// $(function(){
-//     $(window).scroll(function() {
-//       if($(window).scrollTop() > 100 ) {
-//         $('nav').animate({'backgroundColor':'#e10000'},'slow');
-//       } 
-//       else {
-//         $('nav').animate({'backgroundColor':'#FF0000'},'slow');
-//       }
-//     });
-// });
-</script>
 </body>
 </html>
