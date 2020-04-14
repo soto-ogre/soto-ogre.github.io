@@ -66,9 +66,9 @@ $(window).on('load resize', function(){
 
 function toggleNav() {
   var body = document.body;
-  var hamburger = $('.nav_btn')[0];
+  var navBtn = $('.nav_btn')[0];
   var blackBg = $('.nav_bg')[0];
-  $(hamburger).on('click', function() {
+  $(navBtn).on('click', function() {
     $(body).toggleClass('nav_open');
   });
   $(blackBg).on('click', function() {

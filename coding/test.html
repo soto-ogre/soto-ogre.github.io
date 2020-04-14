@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title></title>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href=".././assets/reset.css?28081308">
+<link rel="stylesheet" href=".././assets/coding-style/test.css">
+</head>
+<body>
+  <script type = "module" src = "https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+
+  <nav>
+    <h1 id="sitetitle">MENU SAMPLE</h1>
+    <ul id="nav">
+      <li>
+        <a href="">Home</a>
+      </li>
+      <li>
+        <a href="">About</a>
+      </li>
+      <li>
+        <a href="">Contents</a>
+      </li>
+      <li>
+        <a href="">Contens</a>
+      </li>
+      <li>
+        <a href="">Access</a>
+      </li>
+      <li>
+        <a href="">Contact</a>
+      </li>
+    </ul>
+    
+    <div class="nav_btn" id="nav_btn">
+      <span class="navBtn_line navBtn_line_1"></span>
+      <span class="navBtn_line navBtn_line_2"></span>
+      <span class="navBtn_line navBtn_line_3"></span>
+    </div>
+    <div class="nav_bg" id="nav_bg"></div>
+  </nav>
+
+<script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
+<script>
+  function toggleNav() {
+  var body = document.body;
+  var navBtn = $('.nav_btn')[0];
+  var blackBg = $('.nav_bg')[0];
+  $(navBtn).on('click', function() {
+    $(body).toggleClass('nav_open');
+  });
+  $(blackBg).on('click', function() {
+    // body.classList.remove('nav_open'); //もう一度クリックで解除
+    $(body).removeClass('nav_open');
+  });
+}
+toggleNav();
+</script>
+</body>
+</html>

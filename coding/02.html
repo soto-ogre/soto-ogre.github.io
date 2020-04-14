@@ -329,8 +329,7 @@ src="https://code.jquery.com/jquery-3.4.1.min.js"
 integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 crossorigin="anonymous"></script>
 <script>
-  /* SP menu */
-  function toggleNav() {
+    function toggleNav() {
   var body = document.body;
   var hamburger = document.getElementById('nav_btn');
   var blackBg = document.getElementById('nav_bg');
@@ -340,6 +339,20 @@ crossorigin="anonymous"></script>
   });
   blackBg.addEventListener('click', function() {
     body.classList.remove('nav_open'); //もう一度クリックで解除
+  });
+}
+toggleNav();
+
+function toggleNav() {
+  var body = document.body;
+  var navBtn = $('.nav_btn')[0];
+  var blackBg = $('.nav_bg')[0];
+  $(navBtn).on('click', function() {
+    $(body).toggleClass('nav_open');
+  });
+  $(blackBg).on('click', function() {
+    // body.classList.remove('nav_open'); //もう一度クリックで解除
+    $(body).removeClass('nav_open');
   });
 }
 toggleNav();
