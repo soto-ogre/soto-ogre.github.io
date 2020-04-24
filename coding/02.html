@@ -1,359 +1,352 @@
-<style>
-
-  *{
-    box-sizing: border-box;
-  }
-.grid {width: 60%;
-
-  border: 1px solid green;
-  display: grid;
-  grid-template-columns:  3.15fr 0.5fr 2.5fr;
-  grid-template-rows: 150px 150px 150px 300px 300px 300px 300px;
-  grid-gap: 20px;
-
-  
-  
-}
-.top_card {
-  grid-column: 1/3;
-  grid-row: 1/4;
-  background: #fc9;
-  }
-
-.main_card_right {
-  grid-column: 2/4;
-  /* grid-row: 1/4; */
-  background: rgb(153, 255, 187);
-}
-
-.main_card_left {
-
-}
-
-
-
-.card {
-  border: 1px solid red;
-}
-
-/* bager menu */
-
-
-@media screen and (min-width:480px) and (max-width: 1024px) {
-  #header #navi {
-  transition: all .6s;
-  overflow-y: auto;
-  padding-top: 40px;
-  width: 300px;
-  height: 100vh;
-  z-index: 200;
-  top: 0;
-  right: -320px;
-  background-color: #fff;
-  position: fixed;
-}
-
-#header .nav_btn {
-  width: 44px;
-  height: 44px;
-  z-index: 300;
-  top: 7px;
-  right: 7px;
-  cursor: pointer;
-  position: absolute;
-}
-
-  .hamburger_line {
-  transition: all .6s;
-  width: 34px;
-  height: 2px;
-  left: 5px;
-  background-color: #000;
-  position: absolute;
-}
-
-.hamburger_line1 { top: 10px; }
-.hamburger_line2 { top: 21px; }
-.hamburger_line3 { top: 32px; }
-
-.nav_bg {
-  opacity: 0;
-  transition: all .6s;
-  width: 100vw;
-  height: 100vh;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  visibility: hidden;
-  background-color: #000;
-  cursor: pointer;
-  position: fixed;
-}
-
-/* 表示された時用のCSS */
-.nav_open #header #navi { right: 0; }
-
-.nav_open .nav_bg {
-  opacity: .8;
-  visibility: visible;
-}
-
-.nav_open .hamburger_line1 {
-  transform: rotate(45deg);
-  top: 20px;
-}
-
-.nav_open .hamburger_line2 {
-  width: 0;
-  left: 50%;
-}
-
-.nav_open .hamburger_line3 {
-  transform: rotate(-45deg);
-  top: 20px;
-}
-}
-
-
-</style>
-<header>
-  <div id="header">
-    <h1>レスポンシブハンバーガーメニューサンプル</h1>
-    <nav>
-    <ul id="navi">
-      <li><a href="#">メニュー1</li>
-      <li><a href="#">メニュー2</a></li>
-      <li><a href="#">メニュー3</a></li>
-      <li><a href="#">メニュー4</a></li>
-      <li><a href="#">メニュー5</a></li>
-      <li><a href="#">メニュー6</a></li>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title></title>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href=".././assets/reset.css?28081308">
+<link rel="stylesheet" href=".././assets/coding-style/css/02.css">
+<script src="https://kit.fontawesome.com/fd98ffa8b7.js" crossorigin="anonymous"></script>
+</head>
+<body class="coding_02">
+  <nav>
+    <h1 id="sitetitle">LEMON PRODUCTS</h1>
+    <ul id="nav">
+      <li>
+        <ul class="nav_inner__left">
+          <li>
+            <a href="">HOME</a>
+          </li>
+          <li>
+            <a href="">BLOG</a>
+          </li>
+          <li>
+            <a href="">COLLECTION</a>
+          </li>
+          <li>
+            <a href="">CONTACT</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul class="nav_inner__right">
+          <li>
+            <a href=""><i class="fas fa-search"></i></a>
+          </li>
+          <li>
+            <a href="">
+              <i class="far fa-heart"></i>
+            </a>
+          </li>
+          <li class="cart_link">
+            <i class="fas fa-shopping-cart"></i>
+          </li>
+          <li>
+            <a href=""><i class="fas fa-user"></i></a>
+          </li>
+        </ul>
+      </li>
     </ul>
-    </nav>
     
-    <!-- ボタン部分ここを後で追加するだけ-->
     <div class="nav_btn" id="nav_btn">
-      <span class="hamburger_line hamburger_line1"></span>
-      <span class="hamburger_line hamburger_line2"></span>
-      <span class="hamburger_line hamburger_line3"></span>
+      <span class="navBtn_line navBtn_line_1"></span>
+      <span class="navBtn_line navBtn_line_2"></span>
+      <span class="navBtn_line navBtn_line_3"></span>
     </div>
     <div class="nav_bg" id="nav_bg"></div>
-    <!-- /ボタン部分ここを後で追加するだけ-->
-      
+  </nav>
+  <div class="cart_area">
+    <ul class="cart">
+      <li>
+        <h1>Shopping Cart</h1>
+      </li>
+      <li class="cart__checkout">
+        <a href="">
+          GO TO CHECKOUT
+        </a>
+      </li>
+      <li class="cart__total">
+        <span>TOTAL :</span>
+        <span class="price">11,200</span>
+      </li>
+      <li class="cart__product">
+        <div class="cart__product--img"></div>
+        <div class="cart__product--name"><a href="">RED PAN</a></div>
+        <div class="cart__product--price">2,400</div>
+        <div class="cart__product--delete"><a href=""><i class="fas fa-trash-alt"></i></a></div>
+      </li>
+      <li class="cart__product">
+        <div class="cart__product--img"></div>
+        <div class="cart__product--name"><a href="">YELLOW PHONE</a></div>
+        <div class="cart__product--price">6,500</div>
+        <div class="cart__product--delete"><a href=""><i class="fas fa-trash-alt"></i></a></div>
+      </li>
+      <li class="cart__product">
+        <div class="cart__product--img"></div>
+        <div class="cart__product--name"><a href="">CACTUS(small)</a></div>
+        <div class="cart__product--price">2,300</div>
+        <div class="cart__product--delete"><a href=""><i class="fas fa-trash-alt"></i></a></div>
+      </li>
+      <li class="cart__view">
+        <a href="">
+          VIEW AND EDIT CART
+        </a>
+      </li>
+    </ul>
+    <div class="cart_link nav_btn" id="cart_link">
+      <span class="navBtn_line navBtn_line_1"></span>
+      <span class="navBtn_line navBtn_line_2"></span>
+      <span class="navBtn_line navBtn_line_3"></span>
+    </div>
   </div>
-  </header>
+  <div class="contents">
 
-<div class="grid">
-  <div class="card top_card"></div>
+    <div class="contents__top_banner_container">
+      あああ
+    </div>
+    <div class="contents__main_container">
+      <a href=""></a>
+      <div class="contents__main_container--featured_products">
+        <h1>Featured Products</h1>
+        <div class="product_container">
+          <div class="product_container__img">
+            <ul class="product_container__img--menu">
+              <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
+              <li><a href=""><i class="fas fa-eye"></i></a></li>
+              <li><a href=""><i class="far fa-heart"></i></a></li>
+            </ul>
+          </div>
+          <h3>SILVER CHAIR</h3>
+          <span class="product_container__price">
+            5,000
+          </span>
+          <span class="product_container__genre">
+            <a href=""><span>furniture</span></a>
+          </span>
+          <!-- <span class="product_container__addToCart">
+            <a href="">ADD TO CART</a>
+          </span> -->
+        </div>
+        <div class="product_container">
+          <a href=""></a>
+          <div class="product_container__img">
+            <ul class="product_container__img--menu">
+              <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
+              <li><a href=""><i class="fas fa-eye"></i></a></li>
+              <li><a href=""><i class="far fa-heart"></i></a></li>
+            </ul>
+          </div>
+          <h3>YELLOW CONTAINER</h3>
+          <span class="product_container__price">
+            10,000
+          </span>
+          <span class="product_container__genre">
+            furniture
+          </span>
+        </div>
+        <div class="product_container">
+          <a href=""></a>
+          <div class="product_container__img">
+            <ul class="product_container__img--menu">
+              <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
+              <li><a href=""><i class="fas fa-eye"></i></a></li>
+              <li><a href=""><i class="far fa-heart"></i></a></li>
+            </ul>
+          </div>
+          <h3>PINK LEAF</h3>
+          <span class="product_container__price">
+            1,000
+          </span>
+          <span class="product_container__genre">
+            plant
+          </span>
+        </div>
 
-  <div class="card side_card"></div>
-  <div class="card side_card"></div>
-  <div class="card side_card"></div>
+        <div class="product_container">
+          <a href=""></a>
+          <div class="product_container__img">
+            <ul class="product_container__img--menu">
+              <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
+              <li><a href=""><i class="fas fa-eye"></i></a></li>
+              <li><a href=""><i class="far fa-heart"></i></a></li>
+            </ul>
+          </div>
+          <h3>CACTUS(small)</h3>
+          <span class="product_container__price">
+            2,300
+          </span>
+          <span class="product_container__genre">
+            plant
+          </span>
+        </div>
 
-  <div class="card main_card_left"></div>
-  <div class="card main_card_right"></div>
+        <div class="product_container">
+          <a href=""></a>
+          <div class="product_container__img">
+            <ul class="product_container__img--menu">
+              <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
+              <li><a href=""><i class="fas fa-eye"></i></a></li>
+              <li><a href=""><i class="far fa-heart"></i></a></li>
+            </ul>
+          </div>
+          <h3>CORAL CHAIRS</h3>
+          <span class="product_container__price">
+            36,000
+          </span>
+          <span class="product_container__genre">
+            furniture
+          </span>
+        </div>
 
-  <div class="card main_card_left"></div>
-  <div class="card main_card_right"></div>
+        <div class="product_container">
+          <a href=""></a>
+          <div class="product_container__img">
+            <ul class="product_container__img--menu">
+              <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
+              <li><a href=""><i class="fas fa-eye"></i></a></li>
+              <li><a href=""><i class="far fa-heart"></i></a></li>
+            </ul>
+          </div>
+          <h3>RED PAN</h3>
+          <span class="product_container__price sale">
+            2,400
+          </span>
+          <span class="product_container__genre">
+            <a href=""><span>kitchen goods</span></a>
+          </span>
+        </div>
 
-  <div class="card main_card_left"></div>
-  <div class="card main_card_right"></div>
+        <div class="product_container">
+          <a href=""></a>
+          <div class="product_container__img">
+            <ul class="product_container__img--menu">
+              <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
+              <li><a href=""><i class="fas fa-eye"></i></a></li>
+              <li><a href=""><i class="far fa-heart"></i></a></li>
+            </ul>
+          </div>
+          <h3>SKY CANDY TRAY</h3>
+          <span class="product_container__price">
+            1,200
+          </span>
+          <span class="product_container__genre">
+            <a href=""><span>kitchen goods</span></a>
+          </span>
+        </div>
 
-  <div class="card main_card_left"></div>
-  <div class="card main_card_right"></div>
-</div>
+        <div class="product_container">
+          <a href=""></a>
+          <div class="product_container__img">
+            <ul class="product_container__img--menu">
+              <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
+              <li><a href=""><i class="fas fa-eye"></i></a></li>
+              <li><a href=""><i class="far fa-heart"></i></a></li>
+            </ul>
+          </div>
+          <h3>WHITE CONTAINER</h3>
+          <span class="product_container__price">
+            10,200
+          </span>
+          <span class="product_container__genre">
+            <a href=""><span>furniture</span></a>
+          </span>
+        </div>
 
+        <div class="product_container">
+          <a href=""></a>
+          <div class="product_container__img">
+            <ul class="product_container__img--menu">
+              <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
+              <li><a href=""><i class="fas fa-eye"></i></a></li>
+              <li><a href=""><i class="far fa-heart"></i></a></li>
+            </ul>
+          </div>
+          <h3>ORANGE MEGAPHONE</h3>
+          <span class="product_container__price">
+            5,000
+          </span>
+          <span class="product_container__genre">
+            <a href=""><span>life goods</span></a>
+          </span>
+        </div>
 
-
-<div class="main-contents__list--grid">
-  <div class="card main-contents__list--top_card">
-    <a href="#"></a>
-    <div class="main-contents__list--top_card--img" id="img_02"></div>
-      <div class="main-contents__list--top_card--caption">
-        <h4>Where can I get some?</h4>
-        <p>
-          There are many variations of passages of Lorem Ipsum available, 
-          but the majority have suffered alteration in some form, 
-          by injected humour, or randomised words which don't look even slightly believable. 
-        </p>
+        <div class="product_container">
+          <a href=""></a>
+          <div class="product_container__img">
+            <ul class="product_container__img--menu">
+              <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
+              <li><a href=""><i class="fas fa-eye"></i></a></li>
+              <li><a href=""><i class="far fa-heart"></i></a></li>
+            </ul>
+          </div>
+          <h3>YELLOW PHONE</h3>
+          <span class="product_container__price">
+            6,500
+          </span>
+          <span class="product_container__genre">
+            <a href=""><span>life goods</span></a>
+          </span>
+        </div>
+<!--         
+        <div class="img_container">
+        </div>
+        <div class="img_container">
+        </div>
+        <div class="img_container">
+        </div>
+        <div class="img_container">
+        </div>
+        <div class="img_container">
+        </div>
+        <div class="img_container">
+        </div>
+        <div class="img_container">
+        </div>
+        <div class="img_container">
+        </div>
+        <div class="img_container">
+        </div>
+        <div class="img_container">
+        </div> -->
       </div>
     </div>
-
-  <div class="card main-contents__list--side_card">
-    <a href="#"></a>
-    <div class="main-contents__list--side_card--img" id="img_01">
-    </div>
-    <div class="main-contents__list--side_card--caption">
-      <h4>三個の平方数の和</h4>
-      <p>
-        There are many variations of passages of Lorem Ipsum available, 
-        but the majority have suffered alteration in some form, 
-        by injected humour, or randomised words which don't look even slightly believable. 
-      </p>
-    </div>
-  </div>
-  <div class="card main-contents__list--side_card">
-    <a href="#"></a>
-    <div class="main-contents__list--side_card--img" id="img_03"></div>
-    <div class="main-contents__list--side_card--caption">
-      <h4>Where can I get some?</h4>
-      <p>
-        There are many variations of passages of Lorem Ipsum available, 
-        but the majority have suffered alteration in some form, 
-        by injected humour, or randomised words which don't look even slightly believable. 
-      </p>
-    </div>
-  </div>
-  <div class="card main-contents__list--side_card">
-    <a href="#"></a>
-    <div class="main-contents__list--side_card--img" id="img_04"></div>
-    <div class="main-contents__list--side_card--caption">
-    <h4>十分条件の証明は初等的に行うことは可能である</h4>
-    <p>
-      できるだけ依然としてはいかに文芸としていけなて、それには今日ごろなどあなたの実安心はない欠けならですない。
-    </p>  
-    </div>
   </div>
 
-  <div class="card main-contents__list--main_card--left">
-    <a href="#"></a>
-    <div class="main-contents__list--main_card--img" id="img_05"></div>
-    <div class="main-contents__list--main_card--caption">
-      <h4>Where can I get some?</h4>
-      <p>
-        There are many variations of passages of Lorem Ipsum available, 
-        but the majority have suffered alteration in some form, 
-        by injected humour, or randomised words which don't look even slightly believable. 
-      </p>
-    </div>
-  </div>
-  <div class="card main-contents__list--main_card--right">
-    <a href="#"></a>
-    <div class="main-contents__list--main_card--img" id="img_06"></div>
-      <div class="main-contents__list--main_card--caption">
-      <h4>Where can I get some?</h4>
-      <p>
-        There are many variations of passages of Lorem Ipsum available, 
-        but the majority have suffered alteration in some form, 
-        by injected humour, or randomised words which don't look even slightly believable. 
-      </p>
-    </div>
-  </div>
-
-  <div class="card main-contents__list--main_card--left">
-    <a href="#"></a>
-    <div class="main-contents__list--main_card--img" id="img_07"></div>
-    <div class="main-contents__list--main_card--caption">
-    <h4>Where can I get some?</h4>
-  <p>
-    There are many variations of passages of Lorem Ipsum available, 
-    but the majority have suffered alteration in some form, 
-    by injected humour, or randomised words which don't look even slightly believable. 
-  </p>
-  </div>
-  </div>
-  <div class="card main-contents__list--main_card--right">
-    <a href="#"></a>
-    <div class="main-contents__list--main_card--img" id="img_08"></div>
-    <div class="main-contents__list--main_card--caption">
-    <h4>きれいながちょうの背にのって、
-      空をひょうひょう翔かけてゆく。</h4>
-  <p>
-    There are many variations of passages of Lorem Ipsum available, 
-    but the majority have suffered alteration in some form, 
-    by injected humour, or randomised words which don't look even slightly believable. 
-  </p>
-  </div>
-  </div>
-
-  <div class="card main-contents__list--main_card--left">
-    <a href="#"></a>
-    <div class="main-contents__list--main_card--img" id="img_09"></div>
-    <div class="main-contents__list--main_card--caption">
-      <h4>海辺に人間の子供たちがおもちゃの小弓に
-      おもちゃの小矢をもってあそんで居ります．</h4>
-  <p>
-    There are many variations of passages of Lorem Ipsum available, 
-    but the majority have suffered alteration in some form, 
-    by injected humour, or randomised words which don't look even slightly believable. 
-  </p>
-  </div>
-  <div class="card main-contents__list--main_card--right">
-    <a href="#"></a>
-    <div class="main-contents__list--main_card--img" id="img_10"></div>
-    <div class="main-contents__list--main_card--caption">
-  <h4>「おむすびが、どうしておいしいのだか、知っていますか。あれはね、人間の指で握りしめて作るからですよ」</h4>
-  <p>
-    There are many variations of passages of Lorem Ipsum available, 
-    but the majority have suffered alteration in some form, 
-    by injected humour, or randomised words which don't look even slightly believable. 
-  </p>
-  </div>
-  </div>
-
-  <div class="card main-contents__list--main_card--left">
-    <a href="#"></a>
-    <div class="main-contents__list--main_card--img" id="img_01"></div>
-    <div class="main-contents__list--main_card--caption">
-      <h4>but the majority have suffered alteration in some form</h4>
-    <p>
-      There are many variations of passages of Lorem Ipsum available, 
-      but the majority have suffered alteration in some form, 
-      by injected humour, or randomised words which don't look even slightly believable. 
-    </p>
-    </div>
-  </div>
-  <div class="card main-contents__list--main_card--right">
-    <a href="#"></a>
-    <div class="main-contents__list--main_card--img" id="img_06"></div>
-    <div class="main-contents__list--main_card--caption">
-    <h4>randomised words which don't look even slightly believable. </h4>
-    <p>
-      There are many variations of passages of Lorem Ipsum available, 
-      but the majority have suffered alteration in some form, 
-      by injected humour, or randomised words which don't look even slightly believable. 
-    </p>
-    </div>
-  </div>
-</div>
-<!-- <div class="main-contents__list--card">
-  <a href="#"></a>
-  <div class="main-contents__list--card--img" id="img_10"></div>
-  <h4>Where can I get some?</h4>
-  <p>
-    There are many variations of passages of Lorem Ipsum available, 
-    but the majority have suffered alteration in some form, 
-  </p>
-</div> -->
 <script
 src="https://code.jquery.com/jquery-3.4.1.min.js"
 integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 crossorigin="anonymous"></script>
 <script>
-    function toggleNav() {
-  var body = document.body;
-  var hamburger = document.getElementById('nav_btn');
-  var blackBg = document.getElementById('nav_bg');
-
-  hamburger.addEventListener('click', function() {
-    body.classList.toggle('nav_open'); //メニュークリックでnav-openというクラスがbodyに付与
-  });
-  blackBg.addEventListener('click', function() {
-    body.classList.remove('nav_open'); //もう一度クリックで解除
-  });
-}
-toggleNav();
-
-function toggleNav() {
+  function toggleNav() {
   var body = document.body;
   var navBtn = $('.nav_btn')[0];
   var blackBg = $('.nav_bg')[0];
+  var cartLink = $('.cart_link')
   $(navBtn).on('click', function() {
     $(body).toggleClass('nav_open');
   });
-  $(blackBg).on('click', function() {
-    // body.classList.remove('nav_open'); //もう一度クリックで解除
-    $(body).removeClass('nav_open');
+  $(cartLink).on('click', function() {
+    $(body).toggleClass('cart_open');
+  });
+  $(blackBg).on('click', function() {    $(body).removeClass('nav_open');
+  });
+  $(blackBg).on('click', function() {    $(body).removeClass('cart_open');
   });
 }
 toggleNav();
+
+
+  $(function () {
+  $('.product_container').hover(function() {
+    $(this).find('li').slideDown(300);
+  }, function(){
+    $(this).find('li').slideUp(300);
+  });
+});
 </script>
+</body>
+</html>
+  
