@@ -353,7 +353,11 @@ toggleNav();
   $(function () {
   $('.product_container').hover(function() {
     $(this).find('li').slideDown(300);
+    
   }, function(){
+    $(this).find('li').slideUp(300);
+  });
+  $(body).on('click', function() {    
     $(this).find('li').slideUp(300);
   });
 });
