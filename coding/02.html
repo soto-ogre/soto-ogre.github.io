@@ -1,367 +1,271 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title></title>
-<meta charset="utf-8">
-<meta name="description" content="">
-<meta name="author" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href=".././assets/reset.css?28081308">
-<link rel="stylesheet" href=".././assets/coding-style/css/02.css">
-<script src="https://kit.fontawesome.com/fd98ffa8b7.js" crossorigin="anonymous"></script>
-</head>
-<body class="coding_02">
-  <nav>
-    <h1 id="sitetitle">LEMON PRODUCTS</h1>
-    <ul id="nav">
-      <li>
-        <ul class="nav_inner__left">
-          <li>
-            <a href="">HOME</a>
-          </li>
-          <li>
-            <a href="">BLOG</a>
-          </li>
-          <li>
-            <a href="">COLLECTION</a>
-          </li>
-          <li>
-            <a href="">CONTACT</a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <ul class="nav_inner__right">
-          <li>
-            <a href=""><i class="fas fa-search"></i></a>
-          </li>
-          <!-- <li class="favorite">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href=".././assets/reset.css?28081308">
+    <link rel="stylesheet" href=".././assets/coding-style/css/02.css">
+    <script src="https://kit.fontawesome.com/fd98ffa8b7.js" crossorigin="anonymous"></script>
+  </head>
+  <body class="coding_02">
+    <div class="modal js-modal">
+      <div class="js-modal-close"></div>
+      <div class="modal__content">
+        <p>ここにモーダルウィンドウで表示したいコンテンツを入れます。モーダルウィンドウを閉じる場合は下の「閉じる」をクリックするか、背景の黒い部分をクリックしても閉じることができます。</p><a class="js-modal-close" href="">閉じる</a>
+      </div>
+      <!-- modal__inner-->
+    </div>
+    <nav>
+      <h1 id="sitetitle"> <img src="../assets/img/coding/lemon.svg">LEMON PRODUCTS</h1>
+      <ul id="nav">
+        <li>
+          <ul class="nav_inner__left">
+            <li><a href="">HOME</a></li>
+            <li><a href="">BLOG</a></li>
+            <li><a href="">COLLECTION</a></li>
+            <li><a href="">CONTACT</a></li>
+          </ul>
+        </li>
+        <li>
+          <ul class="nav_inner__right">
+            <li><a class="js-modal-open" href=""><i class="fas fa-search"></i></a></li>
+            <!--
+            <li class="favorite">
             <a href="">
-              <i class="far fa-heart"></i>
+            <i class="far fa-heart"></i>
             </a>
-          </li>
-          <li class="cart_link">
+            </li>
+            <li class="cart_link">
             <i class="fas fa-shopping-cart"></i>
-          </li> -->
-          <li>
-            <a href=""><i class="fas fa-user"></i></a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <ul id="circleBtn">
-      <li class="favorite">
-        <a href="">
-          <i class="far fa-heart"></i>
-        </a>
-      </li>
-      <li class="cart_link">
-        <i class="fas fa-shopping-cart"></i>
-      </li>
-    </ul>
-    
-    <div class="nav_btn" id="nav_btn">
-      <span class="navBtn_line navBtn_line_1"></span>
-      <span class="navBtn_line navBtn_line_2"></span>
-      <span class="navBtn_line navBtn_line_3"></span>
+            </li>
+            -->
+            <li><a href=""><i class="fas fa-user"></i></a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul id="circleBtn">
+        <li class="favorite"><a href=""><i class="far fa-heart"></i></a></li>
+        <li class="cart_link"><i class="fas fa-shopping-cart"></i></li>
+      </ul>
+      <div class="nav_btn" id="nav_btn"><span class="navBtn_line navBtn_line_1"></span><span class="navBtn_line navBtn_line_2"></span><span class="navBtn_line navBtn_line_3"></span></div>
+      <div class="nav_bg" id="nav_bg"></div>
+    </nav>
+    <div class="cart_area">
+      <ul class="cart">
+        <li>
+          <h1>Shopping Cart</h1>
+        </li>
+        <li class="cart__checkout"><a href="">GO TO CHECKOUT</a></li>
+        <li class="cart__total"><span>TOTAL :</span><span class="price">11,200</span></li>
+        <li class="cart__product">
+          <div class="cart__product--img"></div>
+          <div class="cart__product--name"><a href="">RED PAN</a></div>
+          <div class="cart__product--price">2,400</div>
+          <div class="cart__product--delete"><a href=""><i class="fas fa-trash-alt"></i></a></div>
+        </li>
+        <li class="cart__product">
+          <div class="cart__product--img"></div>
+          <div class="cart__product--name"><a href="">YELLOW PHONE</a></div>
+          <div class="cart__product--price">6,500</div>
+          <div class="cart__product--delete"><a href=""><i class="fas fa-trash-alt"></i></a></div>
+        </li>
+        <li class="cart__product">
+          <div class="cart__product--img"></div>
+          <div class="cart__product--name"><a href="">CACTUS(small)</a></div>
+          <div class="cart__product--price">2,300</div>
+          <div class="cart__product--delete"><a href=""><i class="fas fa-trash-alt"></i></a></div>
+        </li>
+        <li class="cart__view"><a href="">VIEW AND EDIT CART</a></li>
+      </ul>
+      <div class="cart_link nav_btn" id="cart_link"><span class="navBtn_line navBtn_line_1"></span><span class="navBtn_line navBtn_line_2"></span><span class="navBtn_line navBtn_line_3"></span></div>
     </div>
-    <div class="nav_bg" id="nav_bg"></div>
-  </nav>
-  <div class="cart_area">
-    <ul class="cart">
-      <li>
-        <h1>Shopping Cart</h1>
-      </li>
-      <li class="cart__checkout">
-        <a href="">
-          GO TO CHECKOUT
-        </a>
-      </li>
-      <li class="cart__total">
-        <span>TOTAL :</span>
-        <span class="price">11,200</span>
-      </li>
-      <li class="cart__product">
-        <div class="cart__product--img"></div>
-        <div class="cart__product--name"><a href="">RED PAN</a></div>
-        <div class="cart__product--price">2,400</div>
-        <div class="cart__product--delete"><a href=""><i class="fas fa-trash-alt"></i></a></div>
-      </li>
-      <li class="cart__product">
-        <div class="cart__product--img"></div>
-        <div class="cart__product--name"><a href="">YELLOW PHONE</a></div>
-        <div class="cart__product--price">6,500</div>
-        <div class="cart__product--delete"><a href=""><i class="fas fa-trash-alt"></i></a></div>
-      </li>
-      <li class="cart__product">
-        <div class="cart__product--img"></div>
-        <div class="cart__product--name"><a href="">CACTUS(small)</a></div>
-        <div class="cart__product--price">2,300</div>
-        <div class="cart__product--delete"><a href=""><i class="fas fa-trash-alt"></i></a></div>
-      </li>
-      <li class="cart__view">
-        <a href="">
-          VIEW AND EDIT CART
-        </a>
-      </li>
-    </ul>
-    <div class="cart_link nav_btn" id="cart_link">
-      <span class="navBtn_line navBtn_line_1"></span>
-      <span class="navBtn_line navBtn_line_2"></span>
-      <span class="navBtn_line navBtn_line_3"></span>
-    </div>
-  </div>
-  <div class="contents">
-
-    <div class="contents__top_banner_container">
-      あああ
-    </div>
-    <div class="contents__main_container">
-      <a href=""></a>
-      <h1>Featured Products</h1>
-      <div class="contents__main_container--featured_products">
-        
-        <div class="product_container">
-          <div class="product_container__img">
-            <ul class="product_container__img--menu">
-              <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
-              <li><a href=""><i class="fas fa-eye"></i></a></li>
-              <li><a href=""><i class="far fa-heart"></i></a></li>
-            </ul>
-          </div>
-          <h3>SILVER CHAIR</h3>
-          <span class="product_container__price">
-            5,000
-          </span>
-          <span class="product_container__genre">
-            <a href=""><span>furniture</span></a>
-          </span>
-          <!-- <span class="product_container__addToCart">
+    <div class="contents">
+      <div class="contents__top_banner_container">あああ</div>
+      <div class="contents__main_container"><a href=""></a>
+        <h1>
+           Featured Products</h1>
+        <div class="contents__main_container--featured_products">
+          <div class="product_container">
+            <div class="product_container__img">
+              <ul class="product_container__img--menu">
+                <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
+                <li><a href=""><i class="fas fa-eye"></i></a></li>
+                <li><a href=""><i class="far fa-heart"></i></a></li>
+              </ul>
+            </div>
+            <h3>SILVER CHAIR</h3><span class="product_container__price">5,000</span><span class="product_container__genre"><a href=""><span>furniture</span></a></span>
+            <!--
+            <span class="product_container__addToCart">
             <a href="">ADD TO CART</a>
-          </span> -->
-        </div>
-        <div class="product_container">
-          <a href=""></a>
-          <div class="product_container__img">
-            <ul class="product_container__img--menu">
-              <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
-              <li><a href=""><i class="fas fa-eye"></i></a></li>
-              <li><a href=""><i class="far fa-heart"></i></a></li>
-            </ul>
+            </span>
+            -->
           </div>
-          <h3>YELLOW CONTAINER</h3>
-          <span class="product_container__price">
-            10,000
-          </span>
-          <span class="product_container__genre">
-            furniture
-          </span>
-        </div>
-        <div class="product_container">
-          <a href=""></a>
-          <div class="product_container__img">
-            <ul class="product_container__img--menu">
-              <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
-              <li><a href=""><i class="fas fa-eye"></i></a></li>
-              <li><a href=""><i class="far fa-heart"></i></a></li>
-            </ul>
+          <div class="product_container"><a href=""></a>
+            <div class="product_container__img">
+              <ul class="product_container__img--menu">
+                <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
+                <li><a href=""><i class="fas fa-eye"></i></a></li>
+                <li><a href=""><i class="far fa-heart"></i></a></li>
+              </ul>
+            </div>
+            <h3>YELLOW CONTAINER</h3><span class="product_container__price">10,000</span><span class="product_container__genre">furniture</span>
           </div>
-          <h3>PINK LEAF</h3>
-          <span class="product_container__price">
-            1,000
-          </span>
-          <span class="product_container__genre">
-            plant
-          </span>
-        </div>
-
-        <div class="product_container">
-          <a href=""></a>
-          <div class="product_container__img">
-            <ul class="product_container__img--menu">
-              <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
-              <li><a href=""><i class="fas fa-eye"></i></a></li>
-              <li><a href=""><i class="far fa-heart"></i></a></li>
-            </ul>
+          <div class="product_container"><a href=""></a>
+            <div class="product_container__img">
+              <ul class="product_container__img--menu">
+                <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
+                <li><a href=""><i class="fas fa-eye"></i></a></li>
+                <li><a href=""><i class="far fa-heart"></i></a></li>
+              </ul>
+            </div>
+            <h3>PINK LEAF</h3><span class="product_container__price">1,000</span><span class="product_container__genre">plant</span>
           </div>
-          <h3>CACTUS(small)</h3>
-          <span class="product_container__price">
-            2,300
-          </span>
-          <span class="product_container__genre">
-            plant
-          </span>
-        </div>
-
-        <div class="product_container">
-          <a href=""></a>
-          <div class="product_container__img">
-            <ul class="product_container__img--menu">
-              <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
-              <li><a href=""><i class="fas fa-eye"></i></a></li>
-              <li><a href=""><i class="far fa-heart"></i></a></li>
-            </ul>
+          <div class="product_container"><a href=""></a>
+            <div class="product_container__img">
+              <ul class="product_container__img--menu">
+                <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
+                <li><a href=""><i class="fas fa-eye"></i></a></li>
+                <li><a href=""><i class="far fa-heart"></i></a></li>
+              </ul>
+            </div>
+            <h3>CACTUS(small)</h3><span class="product_container__price">2,300</span><span class="product_container__genre">plant</span>
           </div>
-          <h3>CORAL CHAIRS</h3>
-          <span class="product_container__price">
-            36,000
-          </span>
-          <span class="product_container__genre">
-            furniture
-          </span>
-        </div>
-
-        <div class="product_container">
-          <a href=""></a>
-          <div class="product_container__img">
-            <ul class="product_container__img--menu">
-              <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
-              <li><a href=""><i class="fas fa-eye"></i></a></li>
-              <li><a href=""><i class="far fa-heart"></i></a></li>
-            </ul>
+          <div class="product_container"><a href=""></a>
+            <div class="product_container__img">
+              <ul class="product_container__img--menu">
+                <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
+                <li><a href=""><i class="fas fa-eye"></i></a></li>
+                <li><a href=""><i class="far fa-heart"></i></a></li>
+              </ul>
+            </div>
+            <h3>CORAL CHAIRS</h3><span class="product_container__price">36,000</span><span class="product_container__genre">furniture</span>
           </div>
-          <h3>RED PAN</h3>
-          <span class="product_container__price sale">
-            2,400
-          </span>
-          <span class="product_container__genre">
-            <a href=""><span>kitchen goods</span></a>
-          </span>
-        </div>
-
-        <div class="product_container">
-          <a href=""></a>
-          <div class="product_container__img">
-            <ul class="product_container__img--menu">
-              <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
-              <li><a href=""><i class="fas fa-eye"></i></a></li>
-              <li><a href=""><i class="far fa-heart"></i></a></li>
-            </ul>
+          <div class="product_container"><a href=""></a>
+            <div class="product_container__img">
+              <ul class="product_container__img--menu">
+                <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
+                <li><a href=""><i class="fas fa-eye"></i></a></li>
+                <li><a href=""><i class="far fa-heart"></i></a></li>
+              </ul>
+            </div>
+            <h3>RED PAN</h3><span class="product_container__price sale">2,400</span><span class="product_container__genre"><a href=""><span>kitchen goods</span></a></span>
           </div>
-          <h3>SKY CANDY TRAY</h3>
-          <span class="product_container__price">
-            1,200
-          </span>
-          <span class="product_container__genre">
-            <a href=""><span>kitchen goods</span></a>
-          </span>
-        </div>
-
-        <div class="product_container">
-          <a href=""></a>
-          <div class="product_container__img">
-            <ul class="product_container__img--menu">
-              <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
-              <li><a href=""><i class="fas fa-eye"></i></a></li>
-              <li><a href=""><i class="far fa-heart"></i></a></li>
-            </ul>
+          <div class="product_container"><a href=""></a>
+            <div class="product_container__img">
+              <ul class="product_container__img--menu">
+                <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
+                <li><a href=""><i class="fas fa-eye"></i></a></li>
+                <li><a href=""><i class="far fa-heart"></i></a></li>
+              </ul>
+            </div>
+            <h3>SKY CANDY TRAY</h3><span class="product_container__price">1,200</span><span class="product_container__genre"><a href=""><span>kitchen goods</span></a></span>
           </div>
-          <h3>WHITE CONTAINER</h3>
-          <span class="product_container__price">
-            10,200
-          </span>
-          <span class="product_container__genre">
-            <a href=""><span>furniture</span></a>
-          </span>
-        </div>
-
-        <div class="product_container">
-          <a href=""></a>
-          <div class="product_container__img">
-            <ul class="product_container__img--menu">
-              <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
-              <li><a href=""><i class="fas fa-eye"></i></a></li>
-              <li><a href=""><i class="far fa-heart"></i></a></li>
-            </ul>
+          <div class="product_container"><a href=""></a>
+            <div class="product_container__img">
+              <ul class="product_container__img--menu">
+                <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
+                <li><a href=""><i class="fas fa-eye"></i></a></li>
+                <li><a href=""><i class="far fa-heart"></i></a></li>
+              </ul>
+            </div>
+            <h3>WHITE CONTAINER</h3><span class="product_container__price">10,200</span><span class="product_container__genre"><a href=""><span>furniture</span></a></span>
           </div>
-          <h3>ORANGE MEGAPHONE</h3>
-          <span class="product_container__price">
-            5,000
-          </span>
-          <span class="product_container__genre">
-            <a href=""><span>life goods</span></a>
-          </span>
-        </div>
-
-        <div class="product_container">
-          <a href=""></a>
-          <div class="product_container__img">
-            <ul class="product_container__img--menu">
-              <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
-              <li><a href=""><i class="fas fa-eye"></i></a></li>
-              <li><a href=""><i class="far fa-heart"></i></a></li>
-            </ul>
+          <div class="product_container"><a href=""></a>
+            <div class="product_container__img">
+              <ul class="product_container__img--menu">
+                <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
+                <li><a href=""><i class="fas fa-eye"></i></a></li>
+                <li><a href=""><i class="far fa-heart"></i></a></li>
+              </ul>
+            </div>
+            <h3>ORANGE MEGAPHONE</h3><span class="product_container__price">5,000</span><span class="product_container__genre"><a href=""><span>life goods</span></a></span>
           </div>
-          <h3>YELLOW PHONE</h3>
-          <span class="product_container__price">
-            6,500
-          </span>
-          <span class="product_container__genre">
-            <a href=""><span>life goods</span></a>
-          </span>
+          <div class="product_container"><a href=""></a>
+            <div class="product_container__img">
+              <ul class="product_container__img--menu">
+                <li><a href=""><i class="fas fa-cart-arrow-down"></i></a></li>
+                <li><a href=""><i class="fas fa-eye"></i></a></li>
+                <li><a href=""><i class="far fa-heart"></i></a></li>
+              </ul>
+            </div>
+            <h3>YELLOW PHONE</h3><span class="product_container__price">6,500</span><span class="product_container__genre"><a href=""><span>life goods</span></a></span>
+          </div>
+          <!--
+          <div class="img_container">
+          </div>
+          <div class="img_container">
+          </div>
+          <div class="img_container">
+          </div>
+          <div class="img_container">
+          </div>
+          <div class="img_container">
+          </div>
+          <div class="img_container">
+          </div>
+          <div class="img_container">
+          </div>
+          <div class="img_container">
+          </div>
+          <div class="img_container">
+          </div>
+          <div class="img_container">
+          </div>
+          -->
         </div>
-<!--         
-        <div class="img_container">
-        </div>
-        <div class="img_container">
-        </div>
-        <div class="img_container">
-        </div>
-        <div class="img_container">
-        </div>
-        <div class="img_container">
-        </div>
-        <div class="img_container">
-        </div>
-        <div class="img_container">
-        </div>
-        <div class="img_container">
-        </div>
-        <div class="img_container">
-        </div>
-        <div class="img_container">
-        </div> -->
       </div>
     </div>
-  </div>
-
-<script
-src="https://code.jquery.com/jquery-3.4.1.min.js"
-integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-crossorigin="anonymous"></script>
-<script>
-  function toggleNav() {
-  var body = document.body;
-  var navBtn = $('.nav_btn')[0];
-  var blackBg = $('.nav_bg')[0];
-  var cartLink = $('.cart_link')
-  $(navBtn).on('click', function() {
-    $(body).toggleClass('nav_open');
-  });
-  $(cartLink).on('click', function() {
-    $(body).toggleClass('cart_open');
-  });
-  $(blackBg).on('click', function() {    $(body).removeClass('nav_open');
-  });
-  $(blackBg).on('click', function() {    $(body).removeClass('cart_open');
-  });
-}
-toggleNav();
-
-
-  $(function () {
-  $('.product_container').hover(function() {
-    $(this).find('li').slideDown(300);
-    
-  }, function(){
-    $(this).find('li').slideUp(300);
-  });
-  $('.contents__main_container').on('click', function() {    
-    $(this).find('li').slideUp(300);
-  });
-});
-</script>
-</body>
+    <footer>
+      <div>aaaaa</div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+      function toggleNav() {
+      var body = document.body;
+      var navBtn = $('.nav_btn')[0];
+      var blackBg = $('.nav_bg')[0];
+      var cartLink = $('.cart_link')
+      $(navBtn).on('click', function() {
+      $(body).toggleClass('nav_open');
+      });
+      $(cartLink).on('click', function() {
+      $(body).toggleClass('cart_open');
+      });
+      $('.js-modal-open').on('click', function() {
+      $(body).toggleClass('modal_show');
+      });
+      $(blackBg).on('click', function() {
+      $(body).removeClass('nav_open')
+      .removeClass('cart_open');
+      });
+      $(blackBg).on('click', function() {
+      $('.js-modal').fadeOut();
+      $(body).removeClass('modal_show');
+      });
+      }
+      toggleNav();
+      $(function () {
+      $('.product_container').hover(function() {
+      $(this).find('li').slideDown(300);
+      }, function(){
+      $(this).find('li').slideUp(300);
+      });
+      $('.contents__main_container').on('click', function() {
+      $(this).find('li').slideUp(300);
+      });
+      $('.js-modal-open').on('click',function(){
+      $('.js-modal').fadeIn();
+      return false;
+      });
+      // $('.js-modal-close').on('click',function(){
+      //     $('.js-modal').fadeOut();
+      //     return false;
+      // });
+      });
+    </script>
+  </body>
 </html>
-  
