@@ -19,47 +19,6 @@ html
         a.js-modal-close(href='') 閉じる
       // modal__inner
     include 02_header
-    .cart_area
-      ul.cart
-        li
-          h1 Shopping Cart
-        li.cart__checkout
-          a(href='')
-            | GO TO CHECKOUT
-        li.cart__total
-          span TOTAL :
-          span.price 11,200
-        li.cart__product
-          .cart__product--img
-          .cart__product--name
-            a(href='') RED PAN
-          .cart__product--price 2,400
-          .cart__product--delete
-            a(href='')
-              i.fas.fa-trash-alt
-        li.cart__product
-          .cart__product--img
-          .cart__product--name
-            a(href='') YELLOW PHONE
-          .cart__product--price 6,500
-          .cart__product--delete
-            a(href='')
-              i.fas.fa-trash-alt
-        li.cart__product
-          .cart__product--img
-          .cart__product--name
-            a(href='') CACTUS(small)
-          .cart__product--price 2,300
-          .cart__product--delete
-            a(href='')
-              i.fas.fa-trash-alt
-        li.cart__view
-          a(href='')
-            | VIEW AND EDIT CART
-      #cart_link.cart_link.nav_btn
-        span.navBtn_line.navBtn_line_1
-        span.navBtn_line.navBtn_line_2
-        span.navBtn_line.navBtn_line_3
     .contents
       .contents__top_banner_container
         | あああ
@@ -278,6 +237,80 @@ html
             </div>
             <div class="img_container">
             </div>
+        h1 New Collection
+        .contents__main_container--new_collection
+          .product_container
+            a(href='')
+            .product_container__img
+              ul.product_container__img--menu
+                li
+                  a(href='')
+                    i.fas.fa-cart-arrow-down
+                li
+                  a(href='')
+                    i.fas.fa-eye
+                li
+                  a(href='')
+                    i.far.fa-heart
+            h3 YELLOW CONTAINER
+            span.product_container__price
+              | 10,000
+            span.product_container__genre
+              | furniture
+          .product_container
+            a(href='')
+            .product_container__img
+              ul.product_container__img--menu
+                li
+                  a(href='')
+                    i.fas.fa-cart-arrow-down
+                li
+                  a(href='')
+                    i.fas.fa-eye
+                li
+                  a(href='')
+                    i.far.fa-heart
+            h3 YELLOW CONTAINER
+            span.product_container__price
+              | 10,000
+            span.product_container__genre
+              | furniture
+          .product_container
+            a(href='')
+            .product_container__img
+              ul.product_container__img--menu
+                li
+                  a(href='')
+                    i.fas.fa-cart-arrow-down
+                li
+                  a(href='')
+                    i.fas.fa-eye
+                li
+                  a(href='')
+                    i.far.fa-heart
+            h3 YELLOW CONTAINER
+            span.product_container__price
+              | 10,000
+            span.product_container__genre
+              | furniture
+          .product_container
+            a(href='')
+            .product_container__img
+              ul.product_container__img--menu
+                li
+                  a(href='')
+                    i.fas.fa-cart-arrow-down
+                li
+                  a(href='')
+                    i.fas.fa-eye
+                li
+                  a(href='')
+                    i.far.fa-heart
+            h3 YELLOW CONTAINER
+            span.product_container__price
+              | 10,000
+            span.product_container__genre
+              | furniture
     include 02_footer
     script(src='https://code.jquery.com/jquery-3.4.1.min.js', integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=', crossorigin='anonymous')
     script.
