@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href=".././assets/reset.css?28081308">
     <link rel="stylesheet" href=".././assets/coding-style/css/02.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css">
     <script src="https://kit.fontawesome.com/fd98ffa8b7.js" crossorigin="anonymous"></script>
   </head>
   <body class="coding_02">
@@ -130,7 +131,22 @@
       <div class="cart_link nav_btn" id="cart_link"><span class="navBtn_line navBtn_line_1"></span><span class="navBtn_line navBtn_line_2"></span><span class="navBtn_line navBtn_line_3"></span></div>
     </div>
     <div class="contents">
-      <div class="contents__top_banner_container">あああ</div>
+      <div class="contents__top_banner_container swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"> 
+            <div class="swiper-slide__1"></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-slide__2"></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-slide__3"></div>
+          </div>
+        </div>
+        <div class="swiper-pagination swiper-pagination-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
+        <div class="swiper-button-next swiper-button-white"></div>
+      </div>
       <div class="contents__main_container"><a href=""></a>
         <h1>
            Featured Products</h1>
@@ -303,6 +319,7 @@
       </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
     <script>
       function toggleNav() {
       var body = document.body;
@@ -346,6 +363,38 @@
         $(document.body).removeClass('modal_show');
       return false;
       });
+      });
+      var mySwiper = new Swiper ('.swiper-container', {
+      loop: true, // 最後のスライドまで到達した場合、最初に戻らずに続けてスライド可能にするか。
+      speed: 600, // スライドが切り替わるトランジション時間(ミリ秒)。
+      
+      direction: 'horizontal', // スライド方向。 'horizontal'(水平) か 'vertical'(垂直)。effectオプションが 'slide' 以外は無効。
+      effect: 'slide', // "slide", "fade"(フェード), "cube"(キューブ回転), "coverflow"(カバーフロー) または "flip"(平面回転)
+      
+        // スライダーの自動再生
+        // autoplay: true 　のみなら既定値での自動再生
+      autoplay: {
+        delay: 3000, // スライドが切り替わるまでの表示時間(ミリ秒)
+        stopOnLast: false, // 最後のスライドまで表示されたら自動再生を中止するか
+        disableOnInteraction: true // ユーザーのスワイプ操作を検出したら自動再生を中止するか
+      },
+      
+      
+      // ページネーションを表示する場合
+      pagination: {
+        el: '.swiper-pagination',　 // ページネーションを表示するセレクタ
+      },
+      
+      // 前後スライドへのナビゲーションを表示する場合
+      navigation: {
+        nextEl: '.swiper-button-next', // 次のスライドボタンのセレクタ
+        prevEl: '.swiper-button-prev', // 前のスライドボタンのセレクタ
+      },
+      
+      // スクロールバーを表示する場合
+      scrollbar: {
+        el: '.swiper-scrollbar', // スクロールバーを表示するセレクタ
+      }
       });
     </script>
   </body>
