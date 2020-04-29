@@ -14,8 +14,16 @@ html
     .modal.js-modal
       .js-modal-close
       .modal__content
-        p
-          | ここにモーダルウィンドウで表示したいコンテンツを入れます。モーダルウィンドウを閉じる場合は下の「閉じる」をクリックするか、背景の黒い部分をクリックしても閉じることができます。
+        .selectWrap
+          select.select(name="category", required)
+            option(value='category', selected='selected') CATEGORY
+            option(value='furniture') FURNITURE
+            option(value='life goods') LIFE GOODS
+            option(value='plant') PLANT
+            option(value='other') OTHER
+        div
+          input(type="text")
+          button(type="submit") <i class="fas fa-search"></i>
         a.js-modal-close(href='') 閉じる
       // modal__inner
     include 02_header
@@ -258,8 +266,9 @@ html
       $('.js-modal').fadeIn();
       return false;
       });
-      // $('.js-modal-close').on('click',function(){
-      //     $('.js-modal').fadeOut();
-      //     return false;
-      // });
+      $('.js-modal-close').on('click',function(){
+        $('.js-modal').fadeOut();
+        $(document.body).removeClass('modal_show');
+      return false;
+      });
       });
