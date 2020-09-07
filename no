@@ -15,7 +15,51 @@
   <script type = "module" src = "https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js?28081308"></script>
   <div class="contents-wrap">
     <div class="inner-radius">
+      <header>
+        <h1>THIS SITE IS Soto's PORTFORIO</h1>
+        <nav>
+          <div class="nav__detail">
+            name : soto / based in Osaka & Tokyo ,Japan<br>
+            Web Engineer / Illustrator / Painter<br>
+            Ruby / Ruby on Rails / HTML / CSS / jQuery
+          </div>
+          
+          <ul>
+            <li><ion-icon name="mail-outline"></ion-icon> sotoofr<ion-icon name="at-outline" class="icon__atmark"></ion-icon>gmail.com</li>
+            <li>
+              <span>
+                <a href="https://github.com/soto-ogre/"><ion-icon name="logo-github"></ion-icon> </a>
+              </span>
+              <p class="balloon-github">github@soto-ogre</p>
+            </li>
+            <li>
+              <span>
+                <a href="https://twitter.com/ofro41"><ion-icon name="logo-twitter"></ion-icon></a>
+              </span>
+              <p class="balloon-twitter">twitter@ofro41</p></li>
+            <li>
+              <span>
+                <a href="https://sotoogre.hatenablog.jp/"><ion-icon name="reader-outline"></ion-icon></a>
+              </span>
+              <p class="balloon-blog">HatenaBlog</p>
+            </li>
+          </ul>
+          
+          
+        </nav>
+      </header>
       <div class="contents">
+        <h2>app</h2>
+        <div class="portfolio-container capture">
+          
+          <div class="portfolio-container__box">
+            <h3>textapp(ユーザー登録が必要です)</h3>
+            <div class="portfolio-container__box--img" style="background-image: url(assets/img/capture/textapp_01.png);background-size:cover;">
+              <a href="app/textapp.html"></a>
+              <!-- https://textapp2020.herokuapp.com/ -->
+            </div>
+          </div>
+        </div>
 
         <h2>design & coding
         </h2>
