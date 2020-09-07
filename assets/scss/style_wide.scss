@@ -1,0 +1,110 @@
+@import "var.scss";
+
+
+.contents-wrap {
+
+
+
+  
+  
+
+  nav {
+    
+
+    .nav {
+      &__detail {
+        font-size: 0.85em;
+      }
+    }
+    ul {
+      display: flex;
+      justify-content: center;
+      li {
+        margin-right: 10px;
+        position: relative;
+
+        ion-icon {
+          width: 18px;
+          height: 18px;
+          position: relative;
+          top: 5px;
+        }
+        .icon {
+          &__atmark {
+            width: 16px;
+          }
+        }
+      }
+    }
+
+
+
+
+    
+  }
+
+  h1 { // site title
+    font-size: 1.4em;
+    text-align: center;
+    letter-spacing: 2px;
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: 400;
+    margin:50px 0 50px 0;
+  }
+
+  h2 { // contents genre
+    font-size: 1.3em;
+    letter-spacing: 1px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    padding: 10px 0 10px 0;
+    margin: 10px 0 30px 0;
+    border-bottom: 1px solid $gray;
+  }
+
+  h3 { // contents name
+    font-size: 1em;
+    letter-spacing: 1px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    margin: 10px 0 10px 0;
+  }
+
+  
+
+  .contents {
+    .portfolio-container {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      &.capture {
+        > div{
+          height: 200px;
+        }
+        
+      }
+      
+
+      &__box {
+        width: 295px;
+        
+        
+        margin:0 40px 30px 0px;
+        &:nth-child(4n){
+          margin:0 0px 30px 0px;
+        }
+        
+        &--img {
+          width: 100%;
+          > a {
+            display: block;
+            width: 100%;
+            &:hover {
+              background-color: rgba(139, 184, 189, 0.5);
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+

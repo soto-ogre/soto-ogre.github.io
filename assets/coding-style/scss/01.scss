@@ -1,0 +1,1499 @@
+@charset "Shift_JIS";
+@import "../../scss/reset.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Noto+Sans+JP:wght@400;700&display=swap');
+@import "../../scss/mq_setting.scss";
+
+$black-transparency:rgba(0,0,0,0.8);
+$white-transparency:rgba(255,255,255,0.3);
+$white:rgb(237, 237, 237);
+$black:#232323;
+$gray:#a9a9a9;
+$light-gray:rgb(239, 239, 239);
+$side-bar-color:rgb(227, 224, 223);
+$card-background-color:#FFF;
+
+@mixin genre {
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  display: inline-block;
+  margin: 0 8px;
+  font-size: 0.7rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: rgb(255, 255, 255);
+  border-radius: 15px;
+  line-height: 1.3rem;
+  padding: 0 10px;
+}
+
+@mixin card-back-black {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height:100%;
+  background-color: $black;
+  opacity: 0.3;
+}
+
+@mixin h4($padding:0 20px 10px 20px,$margin:10px 0,$bottom:0,$font-size:0.9rem,$line-height:1.7rem) {
+  position: absolute;
+  bottom: $bottom;
+  padding: $padding;
+  margin: $margin;
+  font-size: $font-size;
+  color: $white;
+  line-height: $line-height;
+}
+
+
+
+.coding_01 {
+
+  html {
+    font-size: 10px;
+  }
+
+  body {
+    background-color: $white;
+  }
+
+
+  * {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+  }
+
+  a {
+    color: $gray;
+    text-decoration:none;
+    transition: 0.4s;
+    &:hover {
+      color: $white;
+    }
+  }
+
+  h1 {
+    
+    @include mq(medium,max) {
+      font-size: 2rem;
+      margin-left: 10px;
+    }
+    > a {
+      color: $white;
+      letter-spacing: 3px;
+      font-weight: 900;
+      font-size: 1.5em;
+      @include mq(xsmall){
+        @include mq(xlarge,max,true){
+        }
+      }
+    }
+  }
+
+  nav {
+    position: fixed;
+    z-index: 4;
+  }
+
+  #nav_black_back {
+    z-index: -1;
+    width: 100%;
+    
+    background-color: $black-transparency;
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include mq(xlarge,max,true){
+      display: none;
+    }
+  }
+
+  .header{
+      &_small {
+      font-size: 0.8rem;
+      }
+      &_medium {
+        padding: 10px;
+        font-size: 0.9rem;
+        &_default {
+          padding: 50px 100px;
+        }
+      }
+      &_large {
+        font-size: 1rem;
+      }
+  }
+
+  .nav_black {
+    height: 50px;
+    &_medium {
+      height: 60px;
+    }
+    &_large {
+      height: 100px;
+    }
+  }
+
+  .nav_btn {
+    width: 44px;
+    height: 44px;
+    z-index: 300;
+    cursor: pointer;
+    position: absolute;
+    @include mq(xlarge) {
+      display: none;
+    }
+  }
+
+  @include mq( medium,max,true) {
+    .nav_btn {
+      top: 7px;
+      right: 0px;
+    }
+  }
+
+  @include mq(medium,min) {
+
+    .nav_btn {
+      top: 10px;
+      right: 10px;
+    }
+  }
+  
+    .navBtn_line {
+    transition: all .6s;
+    width: 28px;
+    height: 2px;
+    right: 15px;
+    background-color: $white;
+    position: absolute;
+    &_1 { top: 8px;}
+    &_2 { top: 17px;}
+    &_3 { top: 26px;}
+  }
+  
+
+  .nav_bg {
+    opacity: 0;
+    transition: all .6s;
+    width: 100vw;
+    height: 100vh;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    background-color: $black;
+    cursor: pointer;
+    position: fixed;
+  }
+
+
+  
+
+
+
+  .nav {
+
+    @include mq(xlarge,max,true){
+
+      @include mq(xsmall){
+        
+        
+        @include mq(xlarge,max,true){// laptop以外はハンバーガーメニュー
+          &__menu {
+
+        
+            ul {
+              transition: all .6s;
+              overflow-y: auto;
+              background-color: $black;
+              position: fixed;
+              right: -320px;
+              top: 0;
+              width: 280px;
+              height: 100vh;
+              padding-top: 120px;
+              z-index: 200;
+
+              > li {
+                font-weight: 700;
+                letter-spacing: 1px;
+                text-align: center;
+                line-height: 65px;
+                width: 100%;
+                position: relative;
+                height: 65px;
+                padding: 10px;
+                height: 60px;
+                position: relative;
+                > a {
+                  position: absolute;
+                  display: block;
+                  width: 100%;
+                  height: 100%;
+                  top: 0;
+                  left: 0;
+                  line-height: 60px;
+                }
+                  &:last-child{
+                    div {
+                      display: flex;
+                      justify-content: center;
+                      a {
+                        display: block;
+                        padding: 0px;
+                        width: 45px;
+                        height: 45px;
+                        line-height: 45px;
+                        ion-icon {
+                          width: 20px;
+                          height: 20px;
+                        }
+                      }
+                    }
+                  }
+              }
+
+          
+          h1 + ion-icon { //ヘッダーのメニューアイコン
+            color: $white;
+            width: 37px;
+            height: 37px;
+            position: absolute;
+            right: 10px;
+            top:7px;
+          }
+
+              > a {
+                text-align: center;
+                padding: 0 10px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+                width: 100%;
+                height: 100%;
+                line-height: 60px;
+              }
+            }
+          }
+
+        }
+      }
+
+
+          
+        
+        
+      h1 {
+        padding: 15px 10px;
+      }
+      padding: 0;
+    }
+
+
+    input[type=text] { //検索窓
+      color: $white;
+      font-size: 1rem;
+      opacity: .9;
+      border:none;
+      background-color: $white-transparency;
+      border-radius: 25px;
+      height: 45px;
+      width: 250px;
+      padding: 0 10px 0 25px;
+      
+      &:focus {
+        
+        outline: none;
+      }
+
+      &::placeholder {
+        color: $white-transparency;
+      }
+      &:-ms-input-placeholder {
+        color: $white-transparency;
+      }
+      
+    }
+    
+    
+
+    @include mq(xsmall) {
+      // padding: 15px 10px;
+      width: 100%;
+      @include mq(large) {
+        // padding: 30px 100px;
+      }
+    }
+
+      
+
+
+      
+    &__search {
+      @include mq(xlarge,max,true){
+        // display: none;
+        position: absolute;
+        right: -100%;
+      }
+    }
+    @include mq(xlarge) {
+      padding: 0px;
+      display: flex;
+      flex-direction:row-reverse;
+      width: 100%;
+      height: 100px;
+      line-height: 100px;
+
+      
+      div:first-child {
+        margin-left: auto;
+      }
+      &__menu{
+        display: flex;
+        padding-left: 100px;
+        > ul {
+          padding-left: 60px;
+          display: flex;
+          li {
+            a{
+              font-weight: 700;
+            }
+            letter-spacing: 1px;
+            padding-right: 30px;
+            h1 { // サイトタイトル
+              
+              padding-right: 10px;
+            }
+
+            @include mq(xlarge) {
+              ion-icon {
+                display: none;
+              }
+            }
+          }
+        }
+      } 
+      &__search {
+        position: relative;
+        top:25px;
+        padding-right:100px;
+        display: flex;
+        > a {
+          position: relative;
+          display: block;
+          left: -40px;
+          top: 10px;
+          height: 25px;
+          width: 25px;
+          > ion-icon {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+
+          }
+        }
+        
+      }
+
+      
+    }
+
+    
+
+    
+  }
+
+
+
+  header {
+    z-index: 3;
+    color: $white;
+    height: 100vh;
+    background-image: url("../../.././assets/img/coding/01-01.jpg");
+    background-size:cover;
+    background-origin:content-box;
+    background-position:25% center;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,.4);
+
+    }
+
+    
+
+
+
+    
+
+    .header-contents {
+      z-index: 1;
+      position: relative;
+
+      &__left {
+        font-size: 0.9rem;
+        line-height: 1.3rem;
+        
+
+        h2 {
+          font-size: 1.7rem;
+          margin-bottom: 40px;
+        }
+        &--read-more {
+          font-size: 0.7em;
+          margin-left: 20px;
+        }
+        &--genre {
+          letter-spacing: 2px;
+          line-height: 2em;
+          margin-top: 15px;
+          border-radius: 20px;
+          width: fit-content;
+          background-color: $white-transparency;
+        }
+
+      }
+      @include mq(xsmall) {
+        @include mq(medium,max) {
+          
+          padding: 10px 60px 10px 10px;
+          top: 200px;
+          
+          &__left { 
+            h2 {
+              margin-bottom: 10px;
+            }
+            &--genre {
+              font-size: 0.8em;
+              padding: 0px 15px;
+            }
+          }
+        }
+      }
+        @include mq(medium) {
+          padding: 30% 100px;
+          width: 100%;
+          &__left { 
+            font-size: 1.7em;
+            line-height: 1.5em;
+            
+            h2 {
+              font-size: 3rem;
+              margin-bottom: 40px;
+            }
+            &--genre {
+              font-size: 0.9em;
+              padding: 0px 25px;
+              border-radius: 25px;
+            }
+            &--read-more {
+              font-size: 1em;
+            }
+          }
+          @include mq(large) {
+            display: table-cell;
+            vertical-align: middle;
+
+            @include mq(xlarge) {
+              padding: 0 100px;
+              font-size: 1.6em;
+              top: 300px;
+              display: flex;
+              &__left {
+                font-size: 1em;
+                width: 600px;
+                line-height: 1.4em;
+                  &--genre {
+                    font-size: 0.5em;
+                    padding: 0px 20px;
+                  }
+                }
+              }
+          }
+        }
+
+      
+
+    }
+    
+  }
+  
+  @include mq {
+    
+    /* @include mq */
+    @include mq(large, max, true) {
+      /* @include mq in @include mq(large, max, true) */
+    }
+  }
+
+  .main-contents {
+    background-color: $light-gray;
+    
+    @include mq(xlarge,max,true){
+    }
+    @include mq(xlarge){
+      display: flex;
+      flex-direction : row-reverse;
+      padding: 0 50px;
+    }
+    
+    &__list{
+
+      > h4 {
+        font-size: 1.4rem;
+        font-weight: 700;
+        padding:10px 5px;
+      }
+
+      align-items: flex-start;
+
+      &--grid {
+        width: 100%;
+        display: grid;
+        // grid-template-columns:  3.15fr 0.5fr 2.5fr;
+        // grid-template-rows: 130px 130px 130px max-content max-content max-content max-content;
+        grid-gap: 20px;
+        }
+        .timestamp {
+          color: $gray;
+          font-size: 0.85rem;
+          font-weight: 700;
+          margin-top: 10px;
+          position: absolute;
+          @include mq(medium,max,true){
+              font-size: 0.7rem;
+          }
+        }
+
+      @include mq(xsmall) { // 記事カード一覧
+        
+        .card {
+          a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            &:hover {
+              opacity: 0.2;
+              background-color: $black;
+            }
+          }
+        }
+        @include mq(medium, max,true)  {
+          &--main_card, &--top_card, &--side_card{
+            position: relative;
+              &--img {
+              background-size: cover;
+              background-position: center;
+              width: 100%;
+              height: 120px;
+              }
+    
+              &--caption {
+                > h4 {
+                  @include h4(
+                              $line-height:1.2rem,
+                              $bottom:12px);
+                }
+
+                > .timestamp {
+                  position: absolute;
+                  bottom: 0px;
+                  padding: 0 20px 15px 20px;
+                  color: $white;
+                  
+                }
+                
+    
+                > p { // 本文概要非表示
+                  display: none;
+                }
+
+                &--genre {
+                  @include genre;
+                }
+                &:before {
+                  @include card-back-black;
+                }
+              }
+    
+              &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height:100%;
+                background-color: $black;
+                opacity: 0.3;
+              }
+          }
+        }
+
+
+        &--main_card {
+          &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height:100%;
+            background-color: $black;
+            opacity: 0.3;
+            
+          }
+
+        }
+        @include mq(medium) {
+          &--grid {
+            grid-template-columns:  3.15fr 0.5fr 2.5fr;
+            grid-template-rows: 130px 130px 130px max-content max-content max-content max-content;
+            grid-gap: 20px;
+          }
+
+
+
+          
+
+          &--top_card {
+            grid-column: 1/3;
+            grid-row: 1/4;
+          }
+
+          &--main_card{
+            &--img {
+              background-size: cover;
+              background-position: center;
+              width: 100%;
+              height: 200px;
+              }
+            &--right {
+              grid-column: 2/4;
+              
+            }
+            &--caption {
+              padding: 20px 20px 40px 20px;
+              > h4 {
+                font-size: 1.05rem;
+              }
+              > p { // 本文概要非表示
+                display: none;
+              }
+
+              &--genre {
+                @include genre;
+              }
+              
+            }
+          }
+          
+          &--side_card {
+            position: relative;
+              &--img {
+              
+              background-size: cover;
+              background-position: center;
+              
+              width: 100%;
+              height: 100%;
+              }
+    
+              &--caption {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                
+                > h4 {
+                  @include h4($bottom:15px);
+                }
+
+                
+    
+                > p { // 本文概要非表示
+                  display: none;
+                }
+                .timestamp {
+                  color: $white;
+                  font-size: 0.65em;
+                  left: 20px;
+                  bottom: 20px;
+                  position: absolute;
+                }
+                &--genre {
+                  @include genre;
+                }
+              }
+    
+              &:before {
+                @include card-back-black;
+              }
+    
+          }
+    
+        }
+      }
+
+      &--top_card {
+        // grid-column: 1/3;
+        // grid-row: 1/4;
+        position: relative;
+        &--img {
+          height: 300px;
+          }
+        &--caption {
+          @include mq(medium){
+          margin: 20px;
+          }
+
+
+          > h4 {
+            font-size: 1.3rem;
+            margin: 0;
+            @include mq(medium, max, true) {
+              @include h4(
+                
+              $line-height:1.2rem,
+              $bottom:12px);
+            }
+          }
+          > p {
+            padding-top: 10px;
+          }
+
+
+
+          &--genre {
+            @include genre;
+          }
+
+          
+        }
+
+        @include mq(medium,max,true) {
+          height: 120px;
+          &:before {
+            @include card-back-black;
+          }
+          
+        }
+        
+      }
+
+
+      
+
+      
+      
+
+      
+      
+      
+      .card {
+        padding: 0px;
+        width: 100%;
+        position: relative;
+        background-color: $card-background-color;
+        border-radius: 10px;
+        overflow: hidden;
+
+        #img{
+          @mixin card-img($imgurl) {
+            background: url("../../img/coding/card_#{$imgurl}.jpg");
+            background-position: center;
+          }
+          &_01 {
+            @include card-img("07")
+          }
+          &_02 {
+            @include card-img("02")
+          }
+          &_03 {
+            @include card-img("03")
+          }
+          &_04 {
+            @include card-img("04")
+          }
+          &_05 {
+            @include card-img("05")
+          }
+          &_06 {
+            @include card-img("06")
+          }
+          &_07 {
+            @include card-img("08")
+          }
+          &_08 {
+            @include card-img("01")
+          }
+          &_09 {
+            @include card-img("09")
+          }
+          &_10 {
+            @include card-img("10")
+          }
+
+        @include mq(xsmall) { 
+
+          @include mq(medium) {
+            @include mq(large) {
+              @include mq(xlarge) {
+
+              }
+            }
+          }
+        }
+
+
+
+
+        
+        }
+      }
+
+      @include mq(xlarge,max,true){
+        padding: 20px;
+        @include mq(medium) {
+          padding: 40px;
+        }
+      }
+      @include mq(xsmall) {
+        .card{
+          margin-right: 20px;
+          &--img {
+          }
+          
+        }
+        @include mq(medium) {
+          width: 100%;
+          
+          @include mq(xlarge) {
+            width: 70%;
+            padding: 80px 40px;
+            .card{
+              margin-right: 20px;
+              &--img {
+              }
+              > h4 {
+                // font-size: 1.4em;
+                margin: 10px 0;
+              }
+            }
+          }
+        }
+      }
+
+      @include mq(xlarge){
+
+      }
+
+      &--loadmore{
+        margin: 20px 10px;
+        position: relative;
+        height: 45px;
+        font-weight: 700;
+
+        > a {
+          background-color: $gray;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          display: block;
+          padding: 10px 30px;
+          width: 9rem;
+          line-height: 25px;
+        
+          border-radius: 25px;
+          color: $white;
+
+          &:hover {
+            opacity: .5;
+          }
+        }
+        
+      }
+
+    }
+
+    h6 {
+      text-align: center;
+      font-size: 0.8em;
+      font-weight: 400;
+      + .addBottom {
+        @include mq(xlarge) {
+          height: 400px;
+        }
+        
+        border-radius: 10px;
+        overflow: hidden;
+        order: 4;
+        margin: 10px 0;
+
+
+      }
+    }
+
+    &__side-bar{
+      justify-content: center;
+      display: grid;
+      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+
+
+      background-color: $side-bar-color;
+      position: relative;
+      &--add {
+        
+        justify-self: center;
+        
+        @include mq(medium,max ,true) {
+          min-width: 90%;
+        }
+        min-width: 60%;
+        position: relative;
+        background-image: url("../../img/coding/card_05.jpg");
+        background-size: cover;
+        &:before {
+          background-color: rgba(0, 0, 0, 0.18);
+          display: block;
+          content: '';
+          padding-top: 100%;
+        }
+        > a {
+          transition: .6;
+            z-index: 2;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            > p {
+              position: absolute;
+              transition: 0.6s;
+              color: $white;
+                font-weight: 900;
+              &:first-child{
+                width: 100%;
+              }
+            }
+        }
+        &--addBtn{
+          z-index: 0;
+          font-weight: 900;
+          transition:all 0.5s;
+          position: absolute;
+          color: $white;
+          line-height: 30px;
+          padding: 10px 30px 10px 60px;
+          letter-spacing: 1px;
+          // width: fit-content;
+          margin: 0 auto;
+          text-align: center;
+          background: linear-gradient(to bottom right, rgb(91, 181, 230),rgb(116, 116, 244), rgb(110, 73, 186));
+          border-radius: 30px;
+          > ion-icon {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 10px;
+            left: 15px;
+          }
+        }
+      }
+      @include mq(xlarge,max,true){
+
+        width:100%;
+        padding: 20px;
+        &--add {
+          border-radius: 10px;
+          overflow: hidden;
+          order: 4;
+          margin: 20px;
+          height: 150px;
+          
+          
+          background-position: 0 30%;
+          
+          
+          >a {
+            > p {
+              &:first-child{
+                font-size: 1.4em;
+                top: 25px;
+                left: 10px;
+                @include mq(medium){
+                  font-size: 2rem;
+                }
+              }
+            }
+
+          }
+
+          &--addBtn{
+            padding: 5px 15px 5px 50px;
+            letter-spacing: 1px;
+            margin: 0 auto;
+            top:80px ;
+            left: 10px;
+            > ion-icon {
+              width: 30px;
+              height: 30px;
+              top: 5px;
+              left: 15px;
+            }
+          }
+          
+
+          
+          
+          
+        }
+
+        &--sns {
+          order: 3;
+        }
+
+        
+      }
+      @include mq(xlarge){
+        width: 30%;
+        
+
+        &--add {
+          
+          width: 100%;
+          background-position: center;
+          
+          > a {
+            &:before {
+              z-index: 200;
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            }
+            &:hover {
+              z-index: 1;
+              background-color: rgba(255, 255, 255, 0.318);
+              > p.main-contents__side-bar--add--addBtn {
+                // transition: 0s;
+                background: linear-gradient(to bottom right, rgb(95, 188, 239),rgb(140, 140, 245), rgb(148, 102, 240));
+                
+                
+              }
+            }
+            > p {
+              &:first-child{
+                font-size: 2em;
+                bottom: 110px;
+                left: 20px;
+              }
+              
+              
+            }
+            
+          }
+          &--addBtn{
+            bottom:40px ;
+            left: 20px;
+            > ion-icon {
+              width: 30px;
+              height: 30px;
+              top: 10px;
+              left: 15px;
+            }
+          }
+        }
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        margin: 15px 0;
+        font-weight: 900;
+      }
+      > div:nth-of-type(n + 2) {
+        margin: 20px 20px 40px 20px;
+      }
+      
+
+      &--ranking {
+
+        > .grid {
+          justify-content: center;
+          display: grid;
+          gap: 15px;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        @mixin ranking-card-backimg($imgurl) {
+          background: url("../../img/coding/card_#{$imgurl}.jpg") $white no-repeat -60px 0px;
+          background-size: 180px 100%;
+        }
+
+        &--card {
+          position: relative;
+          height: 100px;
+          padding: 20px 5px 20px 127px;
+          background-size:50% auto; 
+          border-radius: 10px;
+          overflow:hidden;
+          &:first-of-type {
+            @include ranking-card-backimg("05")
+          }
+          &:nth-of-type(2) {
+            @include ranking-card-backimg("07")
+          }
+          &:nth-of-type(3) {
+            @include ranking-card-backimg("01")
+          }
+          &:nth-of-type(4) {
+            @include ranking-card-backimg("10")
+          }
+          &:nth-of-type(5) {
+            @include ranking-card-backimg("02")
+          }
+
+          &:nth-of-type(6) {
+            @include ranking-card-backimg("03")
+          }
+
+          > a {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            &:hover {
+              background-color: rgba(0, 0, 0, 0.133);
+            }
+          }
+          > h4 { //サイドバーのランキング記事タイトル
+            font-size: 0.85rem;
+            line-height: 1rem;
+          }
+          > p {
+            position: absolute;
+
+          }
+        }
+        
+        
+        
+      }
+      &--sns {
+        
+        
+        > p {
+          justify-self: center;
+          background-color: $white;
+          width: 100%;
+          text-align: center;
+          padding: 30px 0;
+          border-radius: 10px;
+          > a {
+            text-align: center;
+            padding: 10px;
+            
+            color: $black;
+            > ion-icon {
+              width: 50px;
+              height: 50px;
+            }
+            &:hover {
+              opacity: .5;
+            }
+          }
+        }
+        
+      }
+      &--pickup {
+
+        > .grid {
+          justify-content: center;
+          display: grid;
+          gap: 15px;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        &--card {
+
+          @mixin pickup-card-backimg($imgurl) {
+            background: url("../../img/coding/card_#{$imgurl}.jpg");
+            background-size: cover;
+          }
+          position: relative;
+          max-width: 400px;
+          height: 200px;
+          padding: 20px 20px 20px 10%;
+          background-size:50% auto; 
+          border-radius: 10px;
+          overflow:hidden;
+          &:first-of-type {
+            @include pickup-card-backimg(11)
+          }
+          &:nth-of-type(2) {
+            @include pickup-card-backimg(12)
+          }
+          &:nth-of-type(3) {
+            @include pickup-card-backimg(13)
+          }
+          &:nth-of-type(4) {
+            @include pickup-card-backimg(14)
+          }
+          &:nth-of-type(5) {
+            @include pickup-card-backimg(16)
+          }
+          &:nth-of-type(6) {
+            @include pickup-card-backimg(15)
+          }
+          > a {
+            z-index: 2;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            &:hover {
+              background-color: rgba(0, 0, 0, 0.133);
+            }
+          }
+          > h4 { //サイドバーのピックアップの記事タイトル
+            color: $white;
+            background-color: rgba(0, 0, 0, 0.235);
+            padding: 10px;
+            position: absolute;
+            left: 0px;
+            bottom: 10%;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    
+    color: $white;
+    display: grid;
+    width: 100%;
+    background-color: $black;
+    padding: 30px 10px 70px 10px;
+    > div {
+      
+      
+      h5 { //footerのコンテンツタイトル
+        font-weight: 900;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+      }
+      p { //フッターの本文
+        color: #dcdcdc;
+        margin-bottom: 30px;
+      }
+      ul {
+        list-style: none;
+        > li {
+          margin: 10px 0;
+          > a {
+            font-weight: 700;
+            letter-spacing: 1px;
+          }
+        }
+      }
+        &.footer {
+          &__copyright {
+            text-align: center;
+            font-size: 0.8em;
+            
+          }
+          &__contactInfo {
+
+            
+            
+          }
+          &__copyright {
+            padding-top: 40px;
+          }
+          &__subscribe {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-rows: 1em 2.5rem;
+            grid-template-columns: 80% 20%;
+            
+            > input[type=text] {
+              grid-row: 2;
+              grid-column: 1/3;
+              border-radius: 20px;
+              border: 1px solid rgba(0,0,0,0);
+              padding: 10px 20px;
+              background-color: $white-transparency;
+              transition: .6s;
+              color: $white;
+              &:focus {
+                
+                outline: none;
+                border: 1px solid $white;
+              }
+              &::placeholder {
+                color: $white;
+                opacity: .5;
+              }
+            }
+
+            > a {
+              position: relative;
+              grid-row: 2;
+              grid-column: 3;
+              display: block;
+              width: 25px;
+              height: 25px;
+              left: -40px;
+              > ion-icon {
+                position: absolute;
+                top: 10px;
+                width: 20px;
+                height: 20px;
+              }
+            }
+            
+          }
+        }
+
+        
+    }
+    
+
+    @include mq(xsmall) {
+      > div {
+        padding: 10px;
+
+      }
+      @include mq(medium) {
+        grid-template-rows: fit-content 30px;
+        grid-template-columns: repeat(auto-fit, 220px) ;
+        justify-content: center;
+        grid-row-gap: 30px;
+        grid-column-gap: 10px;
+        > div {
+            
+          &.footer {
+          
+            &___aboutus {
+
+            }
+            &__copyright {
+              grid-row: 2 / 3 ;
+              grid-column: 1 / 4;
+            }
+
+          }
+        }
+        @include mq(large) {
+          grid-template-columns: repeat(auto-fit, 310px) ;
+          @include mq(xlarge) {
+
+
+          
+
+            > div {
+              
+              &.footer {
+              
+                &__aboutus {
+    
+                }
+                // &__copyright {
+                //   grid-row: 2 / 3 ;
+                //   grid-column: 1 / 4;
+                // }
+  
+              }
+            }
+  
+            
+          }
+        }
+
+      }
+    }
+
+  }
+}
+
+
+
+.nav_open {
+  .contents ul { right: 0; }
+
+  .nav_bg {
+    opacity: .5;
+    visibility: visible;
+    z-index: 100;
+  }
+
+  .navBtn_line {
+    &_1 {
+      transform: rotate(45deg);
+      top: 20px;
+    }
+    &_2 {
+      width: 0;
+      left: 50%;
+    }
+    &_3 {
+      transform: rotate(-45deg);
+      top: 20px;
+    }
+  }
+
+  .nav__search {
+    display: flex;
+    z-index: 300;
+    transition: .6s;
+    position:absolute;
+    right: 30px;
+    top: 80px;
+    > input[type=text] {
+      width: 100%;
+    }
+    > a {
+      position: absolute;
+      display: block;
+      right: 15px;
+      top: 8px;
+      height: 25px;
+      width: 25px;
+      > ion-icon {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+
+      }
+    }
+  }
+}

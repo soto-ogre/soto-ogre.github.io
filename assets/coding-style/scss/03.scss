@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap');
+@import "../.././scss/reset.scss";
+@import "../.././scss/mq_setting.scss";
+@import "./animate.css";
+$white:#FFF;
+$black:#000;
+#coding_03 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 300;
+  width: 100%;
+  height: 500vh;
+
+  a {
+    color: $white;
+    transition: .6s;
+    text-decoration: none;
+    letter-spacing: 1px;
+    @include mq(xlarge) {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .inner {
+    @include mq(xlarge) {
+      position: relative;
+      width: 80%;
+      // height: 100vh;
+      margin: 0 auto;
+      background-color: red;
+    }
+
+    nav {
+
+      transition: .3s;
+      
+
+      .nav {
+        &__wrap {
+          display: grid;
+          grid-template-columns: auto auto;
+          align-items: end;
+        }
+      }
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      
+      color: #FFF;
+      z-index: 500;
+  
+      @include mq(xlarge) {
+        padding: 50px 0;
+
+        span {
+          background:#FFF;
+          height:2px;
+          display:block;
+          position:absolute;
+          left:0
+        }
+        
+        img {
+          width: 4rem;
+        }
+        #sitetitle {
+          font-weight: 600;
+          font-size: 2rem;
+          letter-spacing: 1px;
+          fill:#FFF;
+          svg {
+            height: 2.5rem;
+            position: relative;
+            top: 7px;
+          }
+        }
+        height: 100px;
+        ul {
+          display: grid;
+          justify-items: center;
+          align-items: center;
+          grid-template-columns: repeat(6,auto);
+          li {
+            justify-self: right;
+            line-height: 40px;
+            a {
+              display: block;
+              width: auto;
+              height: 100%;
+              padding: 0 1rem;
+            }
+            &:firt-child {
+              a {
+                border-bottom: 1px solid $white;
+                
+              }
+              
+            }
+          }
+        }
+      }
+  
+    }
+
+    @include mq(xlarge) {
+      
+      .-fixed {
+        
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: $white;
+        width: 100%;
+        height: 70px;
+        padding: 10px 0;
+        box-shadow: 1px 1px 4px 1px rgba($black, $alpha: 0.2);
+        .nav__wrap {
+          width: 80%;
+          margin: 0 auto;
+          
+          
+          color: black;
+          a {
+            color: black;
+          }
+        }
+
+        
+        svg {
+          fill: $black;
+        }
+        
+        
+      }
+    }
+
+    .topSlide-enter-active, .topSlide-leave-active {
+      transform: translate(0px, 0px); 
+      transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    }
+    .topSlide-enter, .topSlide-leave-to /* .fade-leave-active below version 2.1.8 */ {
+      transform: translateY(-100vh) translateY(0px);
+    }
+    
+  }
+
+  header {
+      
+    height: 100vh;
+    width: 100%;
+    background-image: url("../../img/coding/hotel_01.jpg");
+    background-size: cover;
+    background-position: center;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .top-enter-active, .top-leave-active {
+    transform: translate(0px, 0px); 
+    transition: transform 500ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  }
+  
+  .top-enter, .top-leave-to {
+    transform: translateY(-100vh) translateY(0px);
+  }
+
+}

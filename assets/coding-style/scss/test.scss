@@ -1,0 +1,77 @@
+nav{
+#nav {
+  transition: all 0.6s;
+  overflow-y: auto;
+  padding-top: 40px;
+  width: 300px;
+  height: 100vh;
+  z-index: 200;
+  top: 0;
+  right: -320px;
+  background-color: #fff;
+  position: fixed;
+}
+
+  .nav_btn {
+    width: 44px;
+    height: 44px;
+    z-index: 300;
+    cursor: pointer;
+    position: absolute;
+    top: 7px;
+    right: 0px;
+  }
+  
+  .navBtn_line {
+  transition: all .6s;
+  width: 28px;
+  height: 2px;
+  right: 15px;
+  background-color: black;
+  position: absolute;
+  &_1 { top: 8px;}
+  &_2 { top: 17px;}
+  &_3 { top: 26px;}
+}
+  
+
+  .nav_bg {
+    opacity: 0;
+    transition: all .6s;
+    width: 100vw;
+    height: 100vh;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    background-color: #000;
+    cursor: pointer;
+    position: fixed;
+  }
+}
+
+
+.nav_open {
+  nav #nav { right: 0; }
+
+  .nav_bg {
+    opacity: .5;
+    visibility: visible;
+    z-index: 100;
+  }
+  
+  .navBtn_line {
+    &_1 {
+      transform: rotate(45deg);
+      top: 20px;
+    }
+    &_2 {
+      width: 0;
+      left: 50%;
+    }
+    &_3 {
+      transform: rotate(-45deg);
+      top: 20px;
+    }
+  }
+}

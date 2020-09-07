@@ -1,0 +1,170 @@
+@import "reset.scss";
+@import "mq_setting.scss";
+@import "var.scss";
+// @import "style_small.scss";
+@import "style_wide.scss";
+$breakpoints: (
+  'sm': 'screen and (max-width: 480px)',
+  'md': 'screen and (max-width: 896px)',
+  'lg': 'screen and (min-width: 1024px)',
+) !default;
+
+@mixin mq($breakpoint: lg) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+
+.contents-wrap {
+  padding: 70px;
+  @include mq(md) {
+    padding: 40px;
+  }
+  @include mq(sm) {
+    padding: 20px;
+  }
+
+  * {
+    font-family: 'Ubuntu Condensed', sans-serif;
+    color: $black;
+  }
+
+  header {
+    padding:50px  ;
+    @include mq(md) { // 引数を省略（初期値はmdの768px）
+    }
+    @include mq(sm) { // 引数を個別に指定
+      padding:30px
+    }
+    nav {
+      width: fit-content;
+      letter-spacing: 1px;
+      line-height: 25px;
+      margin: 0 auto;
+      padding: 50px 0;
+      @include mq() {
+        padding: 50px 0;
+      }
+
+      @include mq(lg) {
+        .balloon-github {
+          @include balloon(30px,-53px);
+        }
+        .balloon-twitter {
+          @include balloon(30px,-45px);
+        }
+        .balloon-blog {
+          @include balloon(30px,-34px);
+        }
+
+        .balloon-github:before,.balloon-twitter:before,.balloon-blog:before {
+          @include balloon-before;
+          }
+      }
+
+      @include mq(sm) {
+        padding: 30px 0;
+      }
+      ul {
+        display: flex;
+        justify-content: center;
+        @include mq(sm) {
+          display: block;
+        }
+
+        li {
+          @include mq(md) {
+            font-size: 0.9em;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 5px 5px 5px 0;
+          }
+        }
+
+      }
+      
+    
+  
+      
+      
+      
+    }
+  }
+  
+  a {
+    @include mq(lg){
+      transition: 0.2s;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .contents {
+    .portfolio-container {
+      &.capture {
+        > div > div {
+          a {
+            height: 160px;
+          }
+          
+        }
+      }
+      
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+
+      &__box {
+        @include mq(lg){
+          width: 295px;
+          margin:0 40px 30px 0px;
+          &:nth-child(4n){
+            margin:0 0px 30px 0px;
+          }
+        }
+
+        @include mq(md){
+          width: 320px;
+          margin:0 40px 30px 0px;
+          &:nth-child(2n){
+            margin:0px 0px 30px 0px;
+          }
+        }
+
+
+        @include mq(sm){
+          width: 100%;
+          margin:0 0px 30px 0px;
+        }
+        
+        
+        &--img {
+          width: 100%;
+          
+          > a {
+            display: block;
+            width: 100%;
+            height: 100%;
+
+          }
+        }
+      }
+      &.illust {
+        > div > div {
+          background-size:contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          > a  {
+            &::after {
+              display: block;
+              content: "";
+              padding-top: 100%;
+            }
+          } 
+        }
+      }
+    }
+  }
+}
